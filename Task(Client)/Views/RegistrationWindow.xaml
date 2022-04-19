@@ -1,0 +1,25 @@
+﻿<Window x:Class="Task_Client_.Views.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:modelwindows="clr-namespace:Task_Client_.ViewModels.ModelWindows"
+        mc:Ignorable="d"
+        Title="RegistrationWondow" Height="247" Width="310" SizeToContent="WidthAndHeight" Icon="/Views/MainWindowViews/title.ico">
+    <Window.DataContext>
+        <modelwindows:RegistrationWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Label Name="LoginL" Content="Логин" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="15" Width="86"/>
+        <Label Name="PasswordL" Content="Пароль" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" FontSize="15" Width="86"/>
+        <Label Name="FullNameL" Content="Фамилия" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" FontSize="15" Width="86"/>
+        <Label x:Name="NameL" Content="Имя" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" FontSize="15" Width="86"/>
+        <Label x:Name="Middle_nameL" Content="Отчество" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" FontSize="15" Width="86"/>
+        <TextBox Name="LoginT" HorizontalAlignment="Left" Margin="101,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="15" Height="30" Text="{Binding login, Mode=TwoWay}"/>
+        <TextBox Name="PasswordT" HorizontalAlignment="Left" Margin="101,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="15" Height="30" Text="{Binding password, Mode=TwoWay}"/>
+        <TextBox Name="SurnameT" HorizontalAlignment="Left" Margin="101,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="15" Height="30" Text="{Binding surname, Mode=TwoWay}" Cursor="IBeam"/>
+        <TextBox x:Name="NameT" HorizontalAlignment="Left" Margin="101,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="15" Height="30" Text="{Binding name, Mode=TwoWay}" Cursor="IBeam"/>
+        <TextBox x:Name="Middle_nameT" HorizontalAlignment="Left" Margin="101,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="15" Height="30" Text="{Binding middle_name, Mode=TwoWay}"/>
+        <Button Name="RegisterB" Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="10,185,10,10" VerticalAlignment="Top" Height="36" Width="290" Command="{Binding RegisterNowB}"/>
+
+    </Grid>
+</Window>

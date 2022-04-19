@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Task_Client_.Views.MainWindowViews.MainPage.Groups.MyGroupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:modelwindows="clr-namespace:Task_Client_.ViewModels.ModelWindows.MainWindow.Groups"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Task_Client_.Views.MainWindowViews.MainPage.Groups" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="850">
+
+    <UserControl.DataContext>
+        <modelwindows:MyGroupPageViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <ListView ItemsSource="{Binding foundGroups}" SelectedItem="{Binding selectedGroups}" Margin="0,0,183,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Command="{Binding Entrance}" Content="Войти" HorizontalAlignment="Left" Margin="672,55,0,0" VerticalAlignment="Top" Height="40" Width="168" Cursor="Hand"/>
+        <Button Command="{Binding Syncing}" Margin="672,10,10,400" Height="40" Cursor="Hand" Width="168">
+            <materialDesign:PackIcon Kind="SyncCircle" Height="25" Width="25" />
+        </Button>
+    </Grid>
+</UserControl>

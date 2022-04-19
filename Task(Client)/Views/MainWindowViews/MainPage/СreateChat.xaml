@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Task_Client_.Views.MainWindowViews.MainPage.СreateChat"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:modelwindows="clr-namespace:Task_Client_.ViewModels.ModelWindows.MainWindow"
+      xmlns:local="clr-namespace:Task_Client_.Views.MainWindowViews.MainPage" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="850">
+
+    <UserControl.DataContext>
+        <modelwindows:СreateChatPageViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" Height="40"/>
+        <TextBox HorizontalAlignment="Left" Margin="128,10,0,0" Text="{Binding nameChat, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="24" Cursor="IBeam" Height="40"/>
+        <ListView ItemsSource="{Binding foundFriends}" SelectedItem="{Binding selectedFriends}" Margin="0,140,500,10" Width="350" Height="300">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Логин" Width="auto" DisplayMemberBinding="{Binding login}" />
+                    <GridViewColumn Header="Фамилия" Width="auto" DisplayMemberBinding="{Binding surname}" />
+                    <GridViewColumn Header="Имя" Width="auto" DisplayMemberBinding="{Binding name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView ItemsSource="{Binding foundChats}" SelectedItem="{Binding selectedChats}" Margin="490,140,10,10" Height="300" Width="350">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Логин" Width="Auto" DisplayMemberBinding="{Binding login}" />
+                    <GridViewColumn Header="Фамилия" Width="Auto" DisplayMemberBinding="{Binding surname}" />
+                    <GridViewColumn Header="Имя" Width="Auto" DisplayMemberBinding="{Binding name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Command="{Binding AddChat}" HorizontalAlignment="Left" Margin="355,0,0,0" VerticalAlignment="Center" Width="130">
+            <materialDesign:PackIcon Kind="ArrowRightBold" />
+        </Button>
+        <Button Command="{Binding ExcludeChat}" HorizontalAlignment="Left" Margin="355,246,0,0" VerticalAlignment="Top" Width="130">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" />
+        </Button>
+        <Label Content="Друзья" HorizontalAlignment="Left" Margin="128,110,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label Content="Участники чата" HorizontalAlignment="Left" Margin="577,100,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Button Command="{Binding CreateChat}" Content="Создать" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" Cursor="Hand" Width="168" Height="40"/>
+        <Button Command="{Binding Syncing}" Margin="672,10,10,399" Height="40">
+            <materialDesign:PackIcon Kind="SyncCircle" Height="25" Width="25" />
+        </Button>
+    </Grid>
+</UserControl>

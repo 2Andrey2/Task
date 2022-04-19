@@ -1,0 +1,12 @@
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\bin\Debug\net5.0\Task.deps.json
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\bin\Debug\net5.0\Task.dll
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\bin\Debug\net5.0\ref\Task.dll
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\bin\Debug\net5.0\Task.pdb
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.AssemblyInfoInputs.cache
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.AssemblyInfo.cs
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.csproj.CoreCompileInputs.cache
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.dll
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\ref\Task.dll
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.pdb
+C:\Users\Andrey\source\repos\Task(Coursework)\Task\obj\Debug\net5.0\Task.csprojAssemblyReference.cache

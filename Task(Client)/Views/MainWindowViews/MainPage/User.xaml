@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Task_Client_.Views.MainWindowViews.MainPage.User"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Task_Client_.Views.MainWindowViews.MainPage"
+      xmlns:modelwindows="clr-namespace:Task_Client_.ViewModels.ModelWindows.MainWindow"
+      xmlns:modelpost="clr-namespace:Task_Client_.Views.MainWindowViews.MainPage.Model" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <modelwindows:UserPageViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Image Name="photo" HorizontalAlignment="Left" Height="276" Margin="10,50,0,0" VerticalAlignment="Top" Width="288" Source="{Binding PathImage}"/>
+        <Label Name="LastName" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" Width="230" Content="{Binding LastName}"/>
+        <Label Name="FirstName" HorizontalAlignment="Left" Margin="245,10,0,0" VerticalAlignment="Top" FontSize="20" Width="230" Content="{Binding FirstName}"/>
+        <Label Name="MiddleName" HorizontalAlignment="Left" Margin="480,10,0,0" VerticalAlignment="Top" FontSize="20" Width="230" Content="{Binding MiddleName}"/>
+        <Label Name="Status" HorizontalAlignment="Left" Margin="10,336,0,0" VerticalAlignment="Top" FontSize="20" Width="288" Content="{Binding Status}"/>
+        <ListView ItemsSource="{Binding posts}" Margin="303,50,10,10">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListView>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="194,299,0,0" VerticalAlignment="Top" Width="104" Cursor="Hand" Command="{Binding ChangeImage}"/>
+    </Grid>
+</UserControl>

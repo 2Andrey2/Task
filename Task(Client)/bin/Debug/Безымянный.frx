@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/31/2021 21:24:48" ReportInfo.Modified="12/19/2021 22:47:59" ReportInfo.CreatorVersion="2021.4.11.0">
+  <Dictionary>
+    <TableDataSource Name="Предметы" ReferenceName="sessionDataSet1.Предметы" DataType="System.Int32" Enabled="true">
+      <Column Name="Предмет" DataType="System.String"/>
+      <Column Name="id_Предмета" DataType="System.Int32"/>
+    </TableDataSource>
+    <TableDataSource Name="Преподаватели" ReferenceName="sessionDataSet1.Преподаватели" DataType="System.Int32" Enabled="true">
+      <Column Name="Должность" DataType="System.String"/>
+      <Column Name="id_Преподавателя" DataType="System.Int32"/>
+      <Column Name="Фамилия" DataType="System.String"/>
+      <Column Name="Имя" DataType="System.String"/>
+      <Column Name="Отчество" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Расписание" ReferenceName="sessionDataSet1.Расписание" DataType="System.Int32" Enabled="true">
+      <Column Name="Дата" DataType="System.DateTime"/>
+      <Column Name="Аудитория" DataType="System.String"/>
+      <Column Name="id_Расписания" DataType="System.Int32"/>
+    </TableDataSource>
+    <TableDataSource Name="Студенты" ReferenceName="sessionDataSet1.Студенты" DataType="System.Int32" Enabled="true">
+      <Column Name="Группа" DataType="System.Int32"/>
+      <Column Name="id_Студента" DataType="System.Int32"/>
+      <Column Name="Фамилия" DataType="System.String"/>
+      <Column Name="Имя" DataType="System.String"/>
+      <Column Name="Отчество" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Типы" ReferenceName="sessionDataSet1.Типы" DataType="System.Int32" Enabled="true">
+      <Column Name="Тип" DataType="System.String"/>
+      <Column Name="id_Типа" DataType="System.Int32"/>
+    </TableDataSource>
+    <TableDataSource Name="Учебный_план" ReferenceName="sessionDataSet1.Учебный_план" DataType="System.Int32" Enabled="true">
+      <Column Name="Преподователь" DataType="System.Int32"/>
+      <Column Name="Группа" DataType="System.Int32"/>
+      <Column Name="Предмет" DataType="System.Int32"/>
+      <Column Name="id_План" DataType="System.Int32"/>
+    </TableDataSource>
+    <TableDataSource Name="Экзамены" ReferenceName="sessionDataSet1.Экзамены" DataType="System.Int32" Enabled="true">
+      <Column Name="Тип" DataType="System.Int32"/>
+      <Column Name="id_Экзамена" DataType="System.Int32"/>
+    </TableDataSource>
+    <Relation Name="FK__Оценки__Группа__403A8C7D" ReferenceName="sessionDataSet1.FK__Оценки__Группа__403A8C7D" ParentDataSource="null" ChildDataSource="Оценки" ParentColumns="id" ChildColumns="Группа" Enabled="true"/>
+    <Relation Name="FK__Оценки__Студент__3F466844" ReferenceName="sessionDataSet1.FK__Оценки__Студент__3F466844" ParentDataSource="Студенты" ChildDataSource="Оценки" ParentColumns="id" ChildColumns="Студент" Enabled="true"/>
+    <Relation Name="FK__Оценки__Экзамен__3E52440B" ReferenceName="sessionDataSet1.FK__Оценки__Экзамен__3E52440B" ParentDataSource="Экзамены" ChildDataSource="Оценки" ParentColumns="Экзамен" ChildColumns="Экзамен" Enabled="true"/>
+    <Relation Name="FK__Расписани__Препо__398D8EEE" ReferenceName="sessionDataSet1.FK__Расписани__Препо__398D8EEE" ParentDataSource="Преподаватели" ChildDataSource="Расписание" ParentColumns="id" ChildColumns="Преподаватель" Enabled="true"/>
+    <Relation Name="FK__Расписани__Экзам__38996AB5" ReferenceName="sessionDataSet1.FK__Расписани__Экзам__38996AB5" ParentDataSource="Экзамены" ChildDataSource="Расписание" ParentColumns="Экзамен" ChildColumns="Экзамен" Enabled="true"/>
+    <Relation Name="FK__Студенты__Группа__3C69FB99" ReferenceName="sessionDataSet1.FK__Студенты__Группа__3C69FB99" ParentDataSource="null" ChildDataSource="Студенты" ParentColumns="id" ChildColumns="Группа" Enabled="true"/>
+    <Relation Name="FK__Учебный_п__Групп__2D27B809" ReferenceName="sessionDataSet1.FK__Учебный_п__Групп__2D27B809" ParentDataSource="null" ChildDataSource="Учебный_план" ParentColumns="id" ChildColumns="Группа" Enabled="true"/>
+    <Relation Name="FK__Учебный_п__Предм__2E1BDC42" ReferenceName="sessionDataSet1.FK__Учебный_п__Предм__2E1BDC42" ParentDataSource="Предметы" ChildDataSource="Учебный_план" ParentColumns="id" ChildColumns="Предмет" Enabled="true"/>
+    <Relation Name="FK__Учебный_п__Препо__2C3393D0" ReferenceName="sessionDataSet1.FK__Учебный_п__Препо__2C3393D0" ParentDataSource="Преподаватели" ChildDataSource="Учебный_план" ParentColumns="id" ChildColumns="Преподователь" Enabled="true"/>
+    <Relation Name="FK__Экзамены__Группа__34C8D9D1" ReferenceName="sessionDataSet1.FK__Экзамены__Группа__34C8D9D1" ParentDataSource="null" ChildDataSource="Экзамены" ParentColumns="id" ChildColumns="Группа" Enabled="true"/>
+    <Relation Name="FK__Экзамены__Предме__32E0915F" ReferenceName="sessionDataSet1.FK__Экзамены__Предме__32E0915F" ParentDataSource="Предметы" ChildDataSource="Экзамены" ParentColumns="id" ChildColumns="Предмет" Enabled="true"/>
+    <Relation Name="FK__Экзамены__Тип__33D4B598" ReferenceName="sessionDataSet1.FK__Экзамены__Тип__33D4B598" ParentDataSource="Типы" ChildDataSource="Экзамены" ParentColumns="id" ChildColumns="Тип" Enabled="true"/>
+    <Relation Name="FK__Экзамены__Экзаме__31EC6D26" ReferenceName="sessionDataSet1.FK__Экзамены__Экзаме__31EC6D26" ParentDataSource="Учебный_план" ChildDataSource="Экзамены" ParentColumns="Оценивание" ChildColumns="Экзамен" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95">
+      <TextObject Name="Text1" Left="283.5" Top="28.35" Width="94.5" Height="37.8" Text="Отчет&#13;&#10;" Font="Arial, 20pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="107.15" Width="718.2" Height="132.3">
+      <TextObject Name="Text2" Left="47.25" Top="9.45" Width="94.5" Height="18.9" Text="[Date]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="47.25" Top="47.25" Width="94.5" Height="18.9" Text="[Предметы.id_Предмета]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="179.55" Top="47.25" Width="94.5" Height="18.9" Text="[Предметы.Предмет]" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="242.65" Width="718.2" Height="198.45">
+      <ChildBand Name="Child1" Top="444.3" Width="718.2" Height="179.55"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

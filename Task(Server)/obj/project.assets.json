@@ -792,11 +792,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task(Server)\\Task(Server).csproj",
+      "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task(Server)\\Task(Server).csproj",
       "projectName": "Task(Server)",
-      "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task(Server)\\Task(Server).csproj",
+      "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task(Server)\\Task(Server).csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task(Server)\\obj\\",
+      "outputPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task(Server)\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -817,8 +817,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj": {
-              "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj"
+            "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj": {
+              "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj"
             }
           }
         }

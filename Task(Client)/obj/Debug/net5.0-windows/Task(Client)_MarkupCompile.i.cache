@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Andrey\source\repos\Task(Coursework)\Task(Client)\obj\Debug\net5.0-windows\
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task(Client)\obj\Debug\net5.0-windows\
 Task_Client_
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\Andrey\source\repos\Task(Coursework)\Task(Client)\App.xaml
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task(Client)\App.xaml
 181024446616
 
 54-985068063
-199-537886681
+199988262200
 Views\GroupWindowsViews\CreatePostWindow.xaml;Views\GroupWindowsViews\GroupWindow.xaml;Views\GroupWindowsViews\PageGroups\MainGroupPage.xaml;Views\GroupWindowsViews\PageGroups\ManagementGroupPage.xaml;Views\GroupWindowsViews\PageGroups\Statistics.xaml;Views\GroupWindowsViews\UserControlMenuItem.xaml;Views\LoginWindow.xaml;Views\MainWindowViews\MainPage\Chats.xaml;Views\MainWindowViews\MainPage\FriendsPage.xaml;Views\MainWindowViews\MainPage\Groups\CreatingGroupPage.xaml;Views\MainWindowViews\MainPage\Groups\MyGroupPage.xaml;Views\MainWindowViews\MainPage\Groups\SearchGroupsPage.xaml;Views\MainWindowViews\MainPage\SearchUsersPage.xaml;Views\MainWindowViews\MainPage\User.xaml;Views\MainWindowViews\MainPage\UserControlMenuItem.xaml;Views\MainWindowViews\MainPage\СreateChat.xaml;Views\MainWindowViews\MainWindow.xaml;Views\RegistrationWindow.xaml;
 
 False

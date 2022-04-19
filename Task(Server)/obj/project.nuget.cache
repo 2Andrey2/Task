@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T9sfzfP4uJ8UrciujmZ8CGmncvAaRFGWeLL3Yo9LwNiy383hlm4f7tXvZ/K/T1AjdOmEghSxCng/qF1hewZN6Q==",
+  "dgSpecHash": "WKdXn2hafShNdSgtrra4hkmDFj1Y4u8hdlU9ZrTfMrUPWdZzg847+joPZxuhFYYk+s8m+szFgZcZPrxFRFwr8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task(Server)\\Task(Server).csproj",
+  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task(Server)\\Task(Server).csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.7\\microsoft.entityframeworkcore.5.0.7.nupkg.sha512",
     "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.7\\microsoft.entityframeworkcore.abstractions.5.0.7.nupkg.sha512",

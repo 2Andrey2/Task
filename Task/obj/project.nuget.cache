@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "icWcJVjziT5PSP3N2ZNedAeZZ1veUv7SfiSrlnhe7S3HyRLW3pC7qdqNX+u1GEMMhnOoV1twktG4RuRU9p1x5g==",
+  "dgSpecHash": "0DoiBd4dT1ar0BcBUw+tlligLIIvuJCksEa7oO6UAzX34i/VWwxcBv1j7cmvrUMplTXlLtqy9PyI7ATRJb34IQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj",
+  "projectFilePath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Andrey\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Andrey\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"

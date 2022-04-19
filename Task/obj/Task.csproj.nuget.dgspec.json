@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj": {}
+    "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj": {
+    "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj",
+        "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj",
         "projectName": "Task",
-        "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\Task.csproj",
+        "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj",
         "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)\\Task\\obj\\",
+        "outputPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

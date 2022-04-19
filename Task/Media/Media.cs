@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Task.Media
+namespace Task_Data_.Media
 {
     public static class Media
     {

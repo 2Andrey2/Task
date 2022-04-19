@@ -2,8 +2,8 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using Task;
-using Task.Entities;
+using Task_Data_;
+using Task_Data_.Entities;
 using Task_Client_.Data.Entities;
 using Task_Client_.Models.Actions;
 using Task_Client_.ViewModels.Command;

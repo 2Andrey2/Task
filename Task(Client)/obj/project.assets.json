@@ -90,17 +90,17 @@
           }
         }
       },
-      "Task/1.0.0": {
+      "Task(Data)/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
-          "bin/placeholder/Task.dll": {}
+          "bin/placeholder/Task(Data).dll": {}
         },
         "runtime": {
-          "bin/placeholder/Task.dll": {}
+          "bin/placeholder/Task(Data).dll": {}
         }
       }
     }
@@ -269,10 +269,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Task/1.0.0": {
+    "Task(Data)/1.0.0": {
       "type": "project",
-      "path": "../Task/Task.csproj",
-      "msbuildProject": "../Task/Task.csproj"
+      "path": "../Task/Task(Data).csproj",
+      "msbuildProject": "../Task/Task(Data).csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -282,7 +282,7 @@
       "MaterialDesignColors >= 2.0.3",
       "MaterialDesignThemes >= 4.2.1",
       "System.Drawing.Common >= 6.0.0",
-      "Task >= 1.0.0"
+      "Task(Data) >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -317,8 +317,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj": {
-              "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj"
+            "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task(Data).csproj": {
+              "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task(Data).csproj"
             }
           }
         }

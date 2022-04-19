@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
 using Task_Client_.Data.Entities;
-using Task;
-using Task.Entities;
-using Task.Media;
+using Task_Data_;
+using Task_Data_.Entities;
+using Task_Data_.Media;
 
 namespace Task_Client_.Models.ConnectingSockets
 {
@@ -14,19 +15,26 @@ namespace Task_Client_.Models.ConnectingSockets
         IPEndPoint ipEndPoint;
         IPHostEntry ipHost;
         IPAddress ipAddr;
-        int port = 11000;
         Socket sendermy;
         public WorkSoket()
         {
             
         }
 
-        public object DataPreparation(byte[] datamass, string type)
+        public object DataPreparation(byte[] datamass, List<string> type)
         {
-            byte[] rezmass = SendingData(datamass);
+            byte[] rezmass;
+            if (type.Count == 2)
+            {
+                rezmass = SendingData(datamass, Convert.ToInt32(type[1]));
+            }
+            else
+            {
+                rezmass = SendingData(datamass);
+            }
             if (rezmass == null) { return null; }
             object rezobject = null;
-            switch (type)
+            switch (type[0])
             {
                 case "string":
                     rezobject = JsonSerializer.Deserialize<string>(rezmass);
@@ -65,6 +73,9 @@ namespace Task_Client_.Models.ConnectingSockets
                 case "tmessages_group_chat":
                     rezobject = JsonSerializer.Deserialize<tmessages_group_chat>(rezmass);
                     break;
+                case "List<string>":
+                    rezobject = JsonSerializer.Deserialize<List<string>>(rezmass);
+                    break;
                 case "List<tmessages_group_chat>":
                     rezobject = JsonSerializer.Deserialize<List<tmessages_group_chat>>(rezmass);
                     break;
@@ -87,7 +98,7 @@ namespace Task_Client_.Models.ConnectingSockets
 
             return rezobject;
         }
-        public byte[] SendingData (byte[] bytes)
+        public byte[] SendingData (byte[] bytes, int port = 11000)
         {
             try
             {

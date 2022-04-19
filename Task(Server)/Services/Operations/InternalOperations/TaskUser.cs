@@ -4,9 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using Task_Server_.Data.WorkingDatabase.ModelBD;
-using Task;
-using Task.Entities;
-using Task.Media;
+using Task_Data_;
+using Task_Data_.Entities;
+using Task_Data_.Media;
 
 namespace Task_Server_.Services.Operations.InternalOperations
 {

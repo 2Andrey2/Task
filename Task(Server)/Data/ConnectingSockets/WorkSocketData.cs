@@ -1,32 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
-using Task;
-using Task.Entities;
-using Task.Media;
+using Task_Data_;
+using Task_Data_.Entities;
+using Task_Data_.Media;
 
 namespace Task_Server_.Data.ConnectingSockets
 {
-    class WorkSocket
+    class WorkSocketData: WorkSoket
     {
-        Socket sListener;
-        IPEndPoint ipEndPoint;
-        Socket handler;
-        public WorkSocket()
+        public WorkSocketData(int port = 11000)
         {
-            // Устанавливаем для сокета локальную конечную точку
-            IPHostEntry ipHost = Dns.GetHostEntry("localhost");
-            IPAddress ipAddr = ipHost.AddressList[0];
-            ipEndPoint = new IPEndPoint(ipAddr, 11000);
-
-            // Создаем сокет Tcp/Ip
-            sListener = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            sListener.Bind(ipEndPoint);
-            sListener.Listen(10);
+            CreateSoket(port);
         }
 
         public object WaitingСonnection(int size, string mode)
@@ -38,27 +26,7 @@ namespace Task_Server_.Data.ConnectingSockets
                 Console.WriteLine("Ожидаем соединение через порт {0}", ipEndPoint);
                 // Программа приостанавливается, ожидая входящее соединение
                 handler = sListener.Accept();
-                byte[] bytes;
-                if (size == 0)
-                {
-                    bytes = new byte[handler.Available];
-                    handler.Receive(bytes);
-                }
-                else
-                {
-                    bytes = new byte[size];
-                    while (true)
-                    {
-                        if (handler.Available != 0)
-                        {
-                            handler.Receive(bytes);
-                        }
-                        if (bytes.Length == size)
-                        {
-                            break;
-                        }
-                    }
-                }
+                byte[] bytes = GettingResult(size);
                 object data = null;
                 switch (mode)
                 {
@@ -89,20 +57,13 @@ namespace Task_Server_.Data.ConnectingSockets
             return null;
         }
 
-        public void Clouse()
-        {
-            handler.Shutdown(SocketShutdown.Both);
-            handler.Close();
-        }
-
-        public void Answer(object text)
+        public void AnswerObject(object text)
         {
             byte[] bytes;
             if (text is string[]) { text = Encryption.EncodeDecryptMass((string[])text); }
             bytes = JsonSerializer.SerializeToUtf8Bytes(text);
             if (text is Image) { bytes = WorkingImages.ImageEncoding((Image)text); }
-            Console.WriteLine("Отправка результатов выполнения операции");
-            handler.Send(bytes);
+            Answer(bytes);
         }
     }
 }

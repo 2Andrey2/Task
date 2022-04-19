@@ -6,8 +6,8 @@ using System.Windows.Input;
 using Task_Client_.Data.Entities;
 using Task_Client_.Models.Actions;
 using Task_Client_.ViewModels.Command;
-using Task;
-using Task.Entities;
+using Task_Data_;
+using Task_Data_.Entities;
 
 namespace Task_Client_.ViewModels.ModelWindows.MainWindow
 {

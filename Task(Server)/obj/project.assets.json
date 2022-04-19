@@ -252,17 +252,17 @@
           }
         }
       },
-      "Task/1.0.0": {
+      "Task(Data)/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
-          "bin/placeholder/Task.dll": {}
+          "bin/placeholder/Task(Data).dll": {}
         },
         "runtime": {
-          "bin/placeholder/Task.dll": {}
+          "bin/placeholder/Task(Data).dll": {}
         }
       }
     }
@@ -771,10 +771,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Task/1.0.0": {
+    "Task(Data)/1.0.0": {
       "type": "project",
-      "path": "../Task/Task.csproj",
-      "msbuildProject": "../Task/Task.csproj"
+      "path": "../Task/Task(Data).csproj",
+      "msbuildProject": "../Task/Task(Data).csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -782,7 +782,7 @@
       "MySqlConnector >= 1.3.11",
       "Pomelo.EntityFrameworkCore.MySql >= 5.0.1",
       "System.Drawing.Common >= 6.0.0",
-      "Task >= 1.0.0"
+      "Task(Data) >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -817,8 +817,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj": {
-              "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj"
+            "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task(Data).csproj": {
+              "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task(Data).csproj"
             }
           }
         }

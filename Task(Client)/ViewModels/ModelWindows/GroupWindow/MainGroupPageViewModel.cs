@@ -8,7 +8,7 @@ using System.Windows;
 using Task_Client_.ViewModels.ModelWindows.MainWindow.Groups;
 using System.Collections.ObjectModel;
 using Task_Client_.Views.GroupWindowsViews.Model;
-using Task.Entities;
+using Task_Data_.Entities;
 
 namespace Task_Client_.ViewModels.ModelWindows.GroupWindow
 {

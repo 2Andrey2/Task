@@ -14,21 +14,21 @@ using Task_Server_.Services.Operations.InternalOperations;
 
 namespace Task_Server_.Services
 {
-    class AnalysisTask
+   static class AnalysisTask
     {
-        public string Analysis(List<string> task)
+        public static List<string> Analysis(List<string> task)
         {
             Authorization authorization = new Authorization();
             string[] tasks = task[0].Split(' ');
             if (authorization.CheckingRights(tasks, task))
             {
                 IOperations operations = Fabric(task[0]);
-                return operations.gettype(tasks[1]);
+                return new List<string> { operations.gettype(tasks[1]) };
             }
-            return "Недостаточно прав";
+            return new List<string> { "Недостаточно прав" };
         }
 
-        public object CompletingTask(string task, object massinfo)
+        public static object CompletingTask(string task, object massinfo)
         {
             string[] tasks = task.Split(' ');
             IOperations operations = Fabric(task);
@@ -46,7 +46,7 @@ namespace Task_Server_.Services
             }
         }
 
-        private IOperations Fabric (string task)
+        private static IOperations Fabric (string task)
         {
             string[] tasks = task.Split(' ');
             IOperations operations = null;

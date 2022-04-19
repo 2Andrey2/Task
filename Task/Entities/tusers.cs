@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task.Entities
+namespace Task_Data_.Entities
 {
     [Serializable]
     public class tusers

@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Task
+namespace Task_Data_
 {
     static public class Encryption
     {

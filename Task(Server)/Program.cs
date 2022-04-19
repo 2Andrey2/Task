@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Text;
-using System.Net;
-using System.Net.Sockets;
-using Task_Server_.Data.WorkingDatabase;
-using MySqlConnector;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Task_Server_.Data.ConnectingSockets;
 using Task_Server_.Services;
-using System.Collections.Generic;
 
 namespace Task_Server_
 {
@@ -14,27 +10,48 @@ namespace Task_Server_
     {
         static void Main(string[] args)
         {
-            AnalysisTask analysis = new ();
-            WorkSocket workSocket = new ();
+            Task packetprocessing = new Task(PacketProcessing);
+            packetprocessing.Start();
+            packetprocessing.Wait();
+        }
+
+        private static void PacketProcessing ()
+        {
+            Task<List<string>> informationpackage = new Task<List<string>>(InformationPackage);
+            informationpackage.Start();
             while (true)
             {
-                List<string> rezservis = (List<string>)workSocket.WaitingСonnection(0,"List<string>");
-                if (rezservis != null)
+                if (informationpackage.Status == TaskStatus.RanToCompletion)
                 {
-                    Console.WriteLine("Получен информационный пакет");
-                    workSocket.Answer(analysis.Analysis(rezservis));
-                    object rez = workSocket.WaitingСonnection(Convert.ToInt32(rezservis[1]), rezservis[2]);
-                    Console.WriteLine("Получен пакет данных");
-                    workSocket.Answer(analysis.CompletingTask(rezservis[0], rez));
+                    Task<List<string>> datapackage = new Task<List<string>>(DataPackage, informationpackage.Result);
+                    informationpackage = new Task<List<string>>(InformationPackage);
+                    informationpackage.Start();
+                    datapackage.Start();
                     Console.WriteLine("Сеанс завершен");
                     Console.WriteLine("--------------");
                 }
-                else
-                {
-                    workSocket.Answer(new string[] { "Данные не доставлены" });
-                }
             }
-            workSocket.Clouse();
+        }
+
+        private static List<string> InformationPackage ()
+        {
+            WorkSocketInf workSocket = new();
+            List<string> rezservis = (List<string>)workSocket.WaitingСonnection(0, "List<string>");
+            Console.WriteLine("Получен информационный пакет");
+            List<string> answer = AnalysisTask.Analysis(rezservis);
+            answer.Add("11001");
+            workSocket.AnswerObject(answer);
+            return rezservis;
+        }
+
+        private static List<string> DataPackage(object rezservisOBJ)
+        {
+            List<string> rezservis = (List<string>)rezservisOBJ;
+            WorkSocketData workSocket = new(11001);
+            object rez = workSocket.WaitingСonnection(Convert.ToInt32(rezservis[1]), rezservis[2]);
+            Console.WriteLine("Получен пакет данных");
+            workSocket.AnswerObject(AnalysisTask.CompletingTask(rezservis[0], rez));
+            return new List<string> { "OK" };
         }
     }
 }

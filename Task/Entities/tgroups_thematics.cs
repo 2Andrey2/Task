@@ -1,4 +1,4 @@
-﻿namespace Task.Entities
+﻿namespace Task_Data_.Entities
 {
     public class tgroups_thematics
     {

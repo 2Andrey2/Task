@@ -7,7 +7,7 @@ using System.IO;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Task.Media;
+using Task_Data_.Media;
 using Task_Client_.Data.Entities;
 using Task_Client_.Models.Actions;
 using Task_Client_.ViewModels.Command;

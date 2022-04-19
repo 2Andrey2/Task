@@ -54,8 +54,8 @@ namespace Task_Client_.Views.MainWindowViews.MainPage.Groups {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Task(Client);V1.0.0.0;component/views/mainwindowviews/mainpage/groups/searchgrou" +
-                    "pspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Task(Client);component/views/mainwindowviews/mainpage/groups/searchgroupspage.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\Views\MainWindowViews\MainPage\Groups\SearchGroupsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

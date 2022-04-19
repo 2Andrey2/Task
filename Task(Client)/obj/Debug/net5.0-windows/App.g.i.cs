@@ -59,7 +59,7 @@ namespace Task_Client_ {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/Task(Client);V1.0.0.0;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Task(Client);component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

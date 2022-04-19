@@ -129,9 +129,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj",
-      "projectName": "Task",
-      "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task.csproj",
+      "projectUniqueName": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task(data).csproj",
+      "projectName": "Task(data)",
+      "projectPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\Task(data).csproj",
       "packagesPath": "C:\\Users\\Andrey\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Andrey\\source\\repos\\Task(Coursework)Git\\Task\\obj\\",
       "projectStyle": "PackageReference",

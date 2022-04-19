@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task.Entities
+namespace Task_Data_.Entities
 {
     public class tauthorized
     {

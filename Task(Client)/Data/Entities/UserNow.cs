@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using Task_Client_.Data.Entities;
-using Task.Entities;
+using Task_Data_.Entities;
 
 namespace Task_Client_.Data.Entities
 {

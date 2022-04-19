@@ -4,9 +4,9 @@ using System.IO;
 using System.Text.Json;
 using Task_Client_.Data.Entities;
 using Task_Client_.Models.ConnectingSockets;
-using Task;
-using Task.Entities;
-using Task.Media;
+using Task_Data_;
+using Task_Data_.Entities;
+using Task_Data_.Media;
 
 namespace Task_Client_.Models.Actions
 {
@@ -54,8 +54,8 @@ namespace Task_Client_.Models.Actions
             {
                 infoData = new List<string> { task, massdata.Length.ToString(), dataType};
             }
-            string resultS = (string)connect.DataPreparation(SerializationString(infoData), "string");
-            if (resultS != "Not")
+            List<string> resultS = (List<string>)connect.DataPreparation(SerializationString(infoData), new List<string> { "List<string>" });
+            if (resultS[0] != "Not")
             {
                 return connect.DataPreparation(massdata, resultS);
             }

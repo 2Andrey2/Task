@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Task_Client_.Data.Entities;
 using Task_Client_.Models.Actions;
 using Task_Client_.Views.GroupWindowsViews.Model;
-using Task.Entities;
+using Task_Data_.Entities;
 
 namespace Task_Client_.Models.Statistics_Grup
 {

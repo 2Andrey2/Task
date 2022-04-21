@@ -1,20 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Task_Server_.Data.WorkingDatabase;
-using Task_Server_.Data.WorkingDatabase.ModelBD;
+﻿using System.Collections.Generic;
 using Task_Server_.Services.Operations;
 using Task_Server_.Services.Operations.Authorization;
-using Task_Server_.Services.Operations.ExternalOperations;
-using Task_Server_.Services.Operations.InternalOperations;
 
 
 namespace Task_Server_.Services
 {
-   static class AnalysisTask
+    static class AnalysisTask
     {
         public static List<string> Analysis(List<string> task)
         {
@@ -32,7 +23,6 @@ namespace Task_Server_.Services
         {
             string[] tasks = task.Split(' ');
             IOperations operations = Fabric(task);
-            Console.WriteLine("Попытка выполнить операцию {0}", tasks[1]);
             if (tasks.Length > 3)
             {
                 List<string> paramss = new List<string>();

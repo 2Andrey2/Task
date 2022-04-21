@@ -22,7 +22,7 @@ namespace Task_Server_.Data.ConnectingSockets
             try
             {
                 // Начинаем слушать соединения
-                Console.WriteLine("Ожидаем соединение через порт {0}", ipEndPoint);
+                Console.WriteLine("Ожидаем соединение через информационный порт {0}", ipEndPoint);
                 // Программа приостанавливается, ожидая входящее соединение
                 byte[] bytes = GettingResult(size);
                 object data = null;

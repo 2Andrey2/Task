@@ -111,9 +111,10 @@ namespace Task_Client_.Models.ConnectingSockets
 
                 // Ждем ответ
                 int temp = sendermy.Available;
-                while (true)
+                for (int i = 0; i < 10; i++)
                 {
                     if (sendermy.Available == temp && sendermy.Available != 0) { break; }
+                    System.Threading.Thread.Sleep(500);
                     temp = sendermy.Available;
                 }
                 byte[] bytesrez = new byte[sendermy.Available];

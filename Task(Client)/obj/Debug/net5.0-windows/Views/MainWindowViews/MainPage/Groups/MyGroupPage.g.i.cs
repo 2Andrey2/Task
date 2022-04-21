@@ -57,8 +57,7 @@ namespace Task_Client_.Views.MainWindowViews.MainPage.Groups {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Task(Client);V1.0.0.0;component/views/mainwindowviews/mainpage/groups/mygrouppag" +
-                    "e.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Task(Client);component/views/mainwindowviews/mainpage/groups/mygrouppage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\Views\MainWindowViews\MainPage\Groups\MyGroupPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

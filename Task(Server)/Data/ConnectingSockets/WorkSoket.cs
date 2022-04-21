@@ -33,6 +33,7 @@ namespace Task_Server_.Data.ConnectingSockets
         {
             handler.Shutdown(SocketShutdown.Both);
             handler.Close();
+            sListener.Close();
         }
 
         protected byte[] GettingResult (int size = 0)
@@ -64,7 +65,6 @@ namespace Task_Server_.Data.ConnectingSockets
 
         public void Answer(byte[] bytes)
         {
-            Console.WriteLine("Отправка результатов выполнения операции");
             handler.Send(bytes);
         }
     }

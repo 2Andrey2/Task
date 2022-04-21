@@ -104,7 +104,7 @@ namespace Task_Client_ {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Task(Client);V1.0.0.0;component/views/loginwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Task(Client);component/views/loginwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\LoginWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

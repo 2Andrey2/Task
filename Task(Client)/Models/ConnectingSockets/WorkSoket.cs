@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text.Json;
@@ -111,14 +112,28 @@ namespace Task_Client_.Models.ConnectingSockets
 
                 // Ждем ответ
                 int temp = sendermy.Available;
+                byte[] bytesrez = new byte[0];
+                int flag = 0;
                 for (int i = 0; i < 10; i++)
                 {
-                    if (sendermy.Available == temp && sendermy.Available != 0) { break; }
-                    System.Threading.Thread.Sleep(500);
-                    temp = sendermy.Available;
+                    byte[] tempByte1 = bytesrez;
+                    byte[] tempByte2 = null;
+                    if (flag == 1 && sendermy.Available == 0)
+                    {
+                        break;
+                    }
+                    if (sendermy.Available != 0)
+                    {
+                        tempByte2 = new byte[sendermy.Available];
+                        sendermy.Receive(tempByte2);
+                        flag = 1;
+                    }
+                    if (tempByte2 != null)
+                    {
+                        bytesrez = tempByte1.Concat(tempByte2).ToArray();
+                    }
+                    System.Threading.Thread.Sleep(200);
                 }
-                byte[] bytesrez = new byte[sendermy.Available];
-                sendermy.Receive(bytesrez);
                 sendermy.Shutdown(SocketShutdown.Both);
                 sendermy.Close();
 

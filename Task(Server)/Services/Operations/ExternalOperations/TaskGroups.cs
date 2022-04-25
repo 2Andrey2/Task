@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Task_Data_.Entities;
-using Task_Server_.Data.WorkingDatabase.ModelBD;
 
 namespace Task_Server_.Services.Operations.ExternalOperations
 {

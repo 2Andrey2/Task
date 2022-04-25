@@ -128,10 +128,13 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow
 
         private void UpdateList()
         {
-            group_chat.Clear();
-            foreach(tmessages_group_chat chat in userChats)
+            if (userChats != null)
             {
-                group_chat.Add(chat);
+                group_chat.Clear();
+                foreach (tmessages_group_chat chat in userChats)
+                {
+                    group_chat.Add(chat);
+                }
             }
         }
     }

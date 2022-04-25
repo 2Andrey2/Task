@@ -16,5 +16,7 @@
         public int thematics { get; set; }
         public string website { get; set; }
         public int type { get; set; }
-    }
+
+        public tgroups_thematics thematics_t { get; set; }
+}
 }

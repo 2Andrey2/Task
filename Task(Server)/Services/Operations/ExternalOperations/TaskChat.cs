@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Task_Data_.Entities;
@@ -69,7 +70,7 @@ namespace Task_Server_.Services.Operations.ExternalOperations
                         f.user,
                         f.chat,
                     }).Where(f => f.user == Convert.ToInt32(massinfo[0])).ToList();
-                List<tmessages_group_chat> rezmass = new List<tmessages_group_chat>();
+                List<tmessages_group_chat> rezmass = new();
                 foreach (var rez in user)
                 {
                     rezmass.Add(new tmessages_group_chat() { id = rez.id, name = rez.name });

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.Text.Json;
-using Task_Data_;
-using Task_Data_.Entities;
-using Task_Data_.Media;
 
 namespace Task_Server_.Data.ConnectingSockets
 {
@@ -16,7 +9,10 @@ namespace Task_Server_.Data.ConnectingSockets
         protected IPEndPoint ipEndPoint;
         protected Socket handler;
 
-        public void CreateSoket(int port)
+        protected IPHostEntry ipHost;
+        protected IPAddress ipAddr;
+
+        public void CreateSoketAccept(int port)
         {
             // Устанавливаем для сокета локальную конечную точку
             IPHostEntry ipHost = Dns.GetHostEntry("localhost");
@@ -27,6 +23,15 @@ namespace Task_Server_.Data.ConnectingSockets
             sListener = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             sListener.Bind(ipEndPoint);
             sListener.Listen(10);
+        }
+
+        public void CreateSoketSend(int port)
+        {
+            ipHost = Dns.GetHostEntry("localhost");
+            ipAddr = ipHost.AddressList[0];
+            ipEndPoint = new IPEndPoint(ipAddr, port);
+            handler = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            handler.Connect(ipEndPoint);
         }
 
         public void Clouse()

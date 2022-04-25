@@ -14,7 +14,7 @@ namespace Task_Server_.Data.ConnectingSockets
     {
         public WorkSocketData(int port = 11000)
         {
-            CreateSoket(port);
+            CreateSoketAccept(port);
         }
 
         public object WaitingСonnection(int size, string mode)

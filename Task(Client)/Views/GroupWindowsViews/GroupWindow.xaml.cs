@@ -7,6 +7,7 @@ using Task_Client_.Models.Actions;
 using Task_Client_.Views.GroupWindowsViews;
 using Task_Client_.Views.GroupWindowsViews.PageGroups;
 using Task_Client_.Views.MainWindowViews.Model;
+using Task_Data_.Entities;
 
 namespace Task_Client_.Views
 {

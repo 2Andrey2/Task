@@ -9,7 +9,7 @@ namespace Task_Server_.Services
     {
         public static List<string> Analysis(List<string> task)
         {
-            Authorization authorization = new Authorization();
+            Authorization authorization = new ();
             string[] tasks = task[0].Split(' ');
             if (authorization.CheckingRights(tasks, task))
             {
@@ -25,7 +25,7 @@ namespace Task_Server_.Services
             IOperations operations = Fabric(task);
             if (tasks.Length > 3)
             {
-                List<string> paramss = new List<string>();
+                List<string> paramss = new ();
                 for (int i = 3; i < tasks.Length; i++)
                 {
                     paramss.Add(tasks[i]);

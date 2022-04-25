@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using Task_Data_.Entities;
-using Task_Server_.Data.WorkingDatabase.ModelBD;
 
 namespace Task_Server_.Data.WorkingDatabase
 {
@@ -17,10 +16,12 @@ namespace Task_Server_.Data.WorkingDatabase
         public DbSet<tgroups_members_status> tgroups_members_status { get; set; }
         public DbSet<tgroups_post> tgroups_post { get; set; }
         public DbSet<members_group> members_group { get; set; }
-
         public DbSet<tusers_group_chat> tusers_group_chat { get; set; }
-
         public DbSet<tmessages_group_chat> tmessages_group_chat { get; set; }
+        public DbSet<tevent> tevent { get; set; }
+        public DbSet<tfriends_status> tfriends_status { get; set; }
+        public DbSet<tgroups_post_comments> tgroups_post_comments { get; set; }
+        public DbSet<tusers_position> tusers_position { get; set; }
 
         public DBMySQLUtils()
         {

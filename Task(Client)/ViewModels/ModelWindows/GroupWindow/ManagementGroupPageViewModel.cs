@@ -10,6 +10,7 @@ using System.Windows.Input;
 using Task_Client_.Data.Entities;
 using Task_Client_.Models.Actions;
 using Task_Client_.ViewModels.Command;
+using Task_Data_.Entities;
 
 namespace Task_Client_.ViewModels.ModelWindows.GroupWindow
 {

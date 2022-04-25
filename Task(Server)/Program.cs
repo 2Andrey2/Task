@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
 using System.Threading.Tasks;
 using Task_Server_.Data.ConnectingSockets;
 using Task_Server_.Services;
+using Task_Server_.Services.Operations.SystemOperations;
 
 namespace Task_Server_
 {
@@ -10,9 +14,16 @@ namespace Task_Server_
     {
         static void Main(string[] args)
         {
-            Task packetprocessing = new Task(PacketProcessing);
+            Task packetprocessing = new(PacketProcessing);
             packetprocessing.Start();
-            packetprocessing.Wait();
+            TaskTokens tokens = new();
+            while (true)
+            {
+                tokens.TokenVerification();
+                //WorkSoket soket = new();
+                //soket.CreateSoketSend(10000);
+                System.Threading.Thread.Sleep(2000);
+            }
         }
 
         private static void PacketProcessing ()

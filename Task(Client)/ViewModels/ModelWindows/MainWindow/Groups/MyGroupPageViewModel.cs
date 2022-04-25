@@ -72,10 +72,13 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow.Groups
         private void updateList()
         {
             tgroups[] tgroups = actionsGroups.UserGroups(new List<string> { UserNow.Authorized.id.ToString() });
-            _foundGroups.Clear();
-            for (int i = 0; i < tgroups.Length; i++)
+            if (tgroups != null)
             {
-                _foundGroups.Add(new tgroups(tgroups[i].name, tgroups[i].id));
+                _foundGroups.Clear();
+                for (int i = 0; i < tgroups.Length; i++)
+                {
+                    _foundGroups.Add(new tgroups(tgroups[i].name, tgroups[i].id));
+                }
             }
         }
     }

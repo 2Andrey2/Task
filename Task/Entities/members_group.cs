@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task_Server_.Data.WorkingDatabase.ModelBD
+﻿namespace Task_Data_.Entities
 {
-    class members_group
+    public class members_group
     {
         public int id { get; set; }
         public string surname { get; set; }

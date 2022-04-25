@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task_Data_.Entities
 {
-    public class tauthorized
+    public class tusers_position
     {
         public int id { get; set; }
-        public int user { get; set; }
-        public int keyuser { get; set; }
-        public long date { get; set; }
+        public string name { get; set; }
     }
 }

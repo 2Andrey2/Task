@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task_Server_.Data.WorkingDatabase.ModelBD;
 using Task_Data_.Entities;
 
 namespace Task_Server_.Services.Operations.InternalOperations
@@ -31,12 +30,18 @@ namespace Task_Server_.Services.Operations.InternalOperations
         {
             try
             {
-                tmessages messages = new tmessages();
+                tmessages messages = new ();
                 messages.host = Convert.ToInt32(massinfo[0]);
                 messages.friend = Convert.ToInt32(massinfo[1]);
                 messages.message = massinfo[2];
                 messages.personal = 1;
                 db.tmessages.AddRange(messages);
+                tevent eventt = new ();
+                eventt.user = Convert.ToInt32(massinfo[1]);
+                eventt.type = 1;
+                eventt.date = DateTimeOffset.Now.ToUnixTimeSeconds();
+                eventt.result = 0;
+                db.tevent.AddRange(eventt);
                 db.SaveChanges();
                 return true;
             }

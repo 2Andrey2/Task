@@ -10,7 +10,7 @@ namespace Task_Server_.Services.Operations.Authorization
         string[] withoutAuthorization = new string[] { "registration", "authorizationuser" };
         protected int KeyGeneration()
         {
-            Random random = new Random();
+            Random random = new ();
             return random.Next(1000, 100000);
         }
         public bool CheckingRights(string[] info, List<string> task)

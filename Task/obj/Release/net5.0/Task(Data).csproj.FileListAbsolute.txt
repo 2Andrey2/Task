@@ -1,0 +1,11 @@
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\bin\Release\net5.0\Task(Data).deps.json
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\bin\Release\net5.0\Task(Data).dll
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\bin\Release\net5.0\ref\Task(Data).dll
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\bin\Release\net5.0\Task(Data).pdb
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).AssemblyInfoInputs.cache
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).AssemblyInfo.cs
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).csproj.CoreCompileInputs.cache
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).dll
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\ref\Task(Data).dll
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).pdb

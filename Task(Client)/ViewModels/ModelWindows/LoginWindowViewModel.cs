@@ -1,13 +1,12 @@
-﻿using System.Windows;
-using System.Windows.Input;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using Task_Client_.ViewModels.Command;
-using Task_Client_.Models.ConnectingSockets;
+using System.Windows;
+using System.Windows.Input;
 using Task_Client_.Data.Entities;
-using Task_Client_.Data;
-using Task_Client_.ViewModels.ModelWindows.MainWindow;
 using Task_Client_.Models.Actions;
-using System.Collections.Generic;
+using Task_Client_.ViewModels.Command;
+using Task_Client_.ViewModels.ModelWindows.MainWindow;
+using Task_Data_.SystemData;
 
 namespace Task_Client_.ViewModels.ModelWindows
 {
@@ -57,11 +56,15 @@ namespace Task_Client_.ViewModels.ModelWindows
             {
                 return new MyCommand((obj) =>
                 {
-                    if(actionsuser.Authorization(new List<string> { _login, _password }) != "0")
+                    UserNow.listen_port = Ports.GetPort();
+                    if (actionsuser.Authorization(new List<string> { _login, _password, UserNow.listen_port.ToString() }) != "0")
                     {
+                        actionsuser.GetUser(new List<string> { _login, _password });
+                        UserNow.Friends = actionsuser.GetFroendsUser(new List<string> { UserNow.Authorized.id.ToString() });
                         var displayRootRegistry = (Application.Current as App).displayRootRegistry;
                         var MainWindowViewModel = new MainWindowViewModel();
                         displayRootRegistry.ShowPresentation(MainWindowViewModel);
+                        Application.Current.MainWindow.Close();
                     }
                     else
                     {

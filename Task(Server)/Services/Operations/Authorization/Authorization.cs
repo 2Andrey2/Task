@@ -3,6 +3,7 @@ using System.Linq;
 using Task_Data_;
 using Task_Data_.Entities;
 using System;
+using Task_Server_.Services.Operations.SystemOperations;
 
 namespace Task_Server_.Services.Operations.Authorization
 {
@@ -34,9 +35,23 @@ namespace Task_Server_.Services.Operations.Authorization
                 tauthorized key = new ();
                 foreach (tusers rez in user)
                 {
-                    key.user = rez.id;
-                    key.keyuser = KeyGeneration();
-                    key.date = DateTimeOffset.Now.ToUnixTimeSeconds();
+                    var auth = db.tauthorized.Where(p => p.user == rez.id).ToList();
+                    TaskTokens tokens = new();
+                    if (auth.Count != 0)
+                    {
+                        foreach (tauthorized tauthorized in auth)
+                        {
+                            db.tauthorized.Remove(tauthorized);
+                        }
+                    }
+                    if (info.Count >= 3)
+                    {
+                        key = tokens.AddUserToken(rez.id, Convert.ToInt32(info[2]));
+                    }
+                    else
+                    {
+                        key = tokens.AddUserToken(rez.id);
+                    }
                     db.tauthorized.AddRange(key);
                     db.SaveChanges();
                 }

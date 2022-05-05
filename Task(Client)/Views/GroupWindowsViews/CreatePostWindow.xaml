@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Task_Client_.Views.MainWindowViews.MainPage.Groups"
         mc:Ignorable="d"
-        Title="CreatePostWindow" Height="225" Width="461" Icon="/Views/MainWindowViews/title.ico">
+        Title="CreatePostWindow" Height="255" Width="495" Icon="/Views/MainWindowViews/title.ico">
 
     <Window.DataContext>
         <modelwindows:CreatePostWindowViewModel/>

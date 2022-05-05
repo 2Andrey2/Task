@@ -15,16 +15,16 @@
     <Grid>
         <Label Content="Название" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" Height="40"/>
         <TextBox HorizontalAlignment="Left" Margin="128,10,0,0" Text="{Binding nameChat, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top" Width="357" FontSize="24" Cursor="IBeam" Height="40"/>
-        <ListView ItemsSource="{Binding foundFriends}" SelectedItem="{Binding selectedFriends}" Margin="0,140,500,10" Width="350" Height="300">
+        <ListView ItemsSource="{Binding foundFriends}" SelectedItem="{Binding selectedFriends}" Margin="0,155,500,10" Width="350">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Логин" Width="auto" DisplayMemberBinding="{Binding login}" />
+                    <GridViewColumn Header="Логин" Width="auto" DisplayMemberBinding="{Binding  login}" />
                     <GridViewColumn Header="Фамилия" Width="auto" DisplayMemberBinding="{Binding surname}" />
                     <GridViewColumn Header="Имя" Width="auto" DisplayMemberBinding="{Binding name}" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView ItemsSource="{Binding foundChats}" SelectedItem="{Binding selectedChats}" Margin="490,140,10,10" Height="300" Width="350">
+        <ListView ItemsSource="{Binding foundChats}" SelectedItem="{Binding selectedChats}" Margin="490,155,10,10" Width="350">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Логин" Width="Auto" DisplayMemberBinding="{Binding login}" />
@@ -40,7 +40,7 @@
             <materialDesign:PackIcon Kind="ArrowLeftBold" />
         </Button>
         <Label Content="Друзья" HorizontalAlignment="Left" Margin="128,110,0,0" VerticalAlignment="Top" FontSize="24"/>
-        <Label Content="Участники чата" HorizontalAlignment="Left" Margin="577,100,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label Content="Участники чата" HorizontalAlignment="Left" Margin="577,110,0,0" VerticalAlignment="Top" FontSize="24"/>
         <Button Command="{Binding CreateChat}" Content="Создать" HorizontalAlignment="Left" Margin="490,10,0,0" VerticalAlignment="Top" Cursor="Hand" Width="168" Height="40"/>
         <Button Command="{Binding Syncing}" Margin="672,10,10,399" Height="40">
             <materialDesign:PackIcon Kind="SyncCircle" Height="25" Width="25" />

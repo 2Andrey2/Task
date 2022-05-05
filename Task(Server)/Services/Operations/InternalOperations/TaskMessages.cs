@@ -36,7 +36,7 @@ namespace Task_Server_.Services.Operations.InternalOperations
                 messages.message = massinfo[2];
                 messages.personal = 1;
                 db.tmessages.AddRange(messages);
-                tevent eventt = new ();
+                tevent eventt = new();
                 eventt.user = Convert.ToInt32(massinfo[1]);
                 eventt.type = 1;
                 eventt.date = DateTimeOffset.Now.ToUnixTimeSeconds();

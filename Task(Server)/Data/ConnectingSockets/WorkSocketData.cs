@@ -25,6 +25,7 @@ namespace Task_Server_.Data.ConnectingSockets
                 // Начинаем слушать соединения
                 Console.WriteLine("Ожидаем соединение через порт данных {0}", ipEndPoint);
                 // Программа приостанавливается, ожидая входящее соединение
+                handler = sListener.Accept();
                 byte[] bytes = GettingResult(size);
                 object data = null;
                 switch (mode)

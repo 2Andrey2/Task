@@ -30,8 +30,8 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow
             }
         }
 
-        private tfriends _selectedFriends;
-        public tfriends selectedFriends
+        private friends _selectedFriends;
+        public friends selectedFriends
         {
             get { return _selectedFriends; }
             set
@@ -46,8 +46,8 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow
             get { return _foundFriends; }
         }
 
-        private tfriends _selectedChats;
-        public tfriends selectedChats
+        private friends _selectedChats;
+        public friends selectedChats
         {
             get { return _selectedChats; }
             set
@@ -56,8 +56,8 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow
             }
         }
 
-        private readonly ObservableCollection<tfriends> _foundChats = new ObservableCollection<tfriends>();
-        public ObservableCollection<tfriends> foundChats
+        private readonly ObservableCollection<friends> _foundChats = new ObservableCollection<friends>();
+        public ObservableCollection<friends> foundChats
         {
             get { return _foundChats; }
         }
@@ -115,7 +115,7 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow
                         List<tusers_group_chat> info = new List<tusers_group_chat>();
                         tmessages_group_chat id = actions.GetInfoChat(new List<string> { _nameChat });
                         info.Add(new tusers_group_chat { chat = id.id, user = UserNow.Authorized.id });
-                        foreach (tfriends friend in _foundChats)
+                        foreach (friends friend in _foundChats)
                         {
                             info.Add(new tusers_group_chat { chat = id.id, user = friend.id });
                         }

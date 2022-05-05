@@ -21,22 +21,22 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow
             FirstName = UserNow.Authorized.name;
             LastName = UserNow.Authorized.surname;
             MiddleName = UserNow.Authorized.middle_name;
-            if (Media.CheckingUsersFolder(UserNow.Authorized.id.ToString()))
-            {
-                if (Media.CheckingUsersAvatar(UserNow.Authorized.id.ToString()))
-                {
-                    _PathImage = "/" + Media.PathFolderUser + "/" + UserNow.Authorized.id + "/" + Media.NameAvatar;
-                }
-                else
-                {
-                    Image img = actionsUser.GetAvatar(new List<string> { UserNow.Authorized.id.ToString() });
-                    if (img != null)
-                    {
-                        img.Save(Media.PathFolderUser + "/" + UserNow.Authorized.id + "/" + Media.NameAvatar);
-                        _PathImage = "/" + Media.PathFolderUser + "/" + UserNow.Authorized.id + "/" + Media.NameAvatar;
-                    }
-                }
-            }
+            //if (Media.CheckingUsersFolder(UserNow.Authorized.id.ToString()))
+            //{
+            //    if (Media.CheckingUsersAvatar(UserNow.Authorized.id.ToString()))
+            //    {
+            //        _PathImage = "/" + Media.PathFolderUser + "/" + UserNow.Authorized.id + "/" + Media.NameAvatar;
+            //    }
+            //    else
+            //    {
+            //        Image img = actionsUser.GetAvatar(new List<string> { UserNow.Authorized.id.ToString() });
+            //        if (img != null)
+            //        {
+            //            img.Save(Media.PathFolderUser + "/" + UserNow.Authorized.id + "/" + Media.NameAvatar);
+            //            _PathImage = "/" + Media.PathFolderUser + "/" + UserNow.Authorized.id + "/" + Media.NameAvatar;
+            //        }
+            //    }
+            //}
         }
 
         ActionsUser actionsUser = new ActionsUser();

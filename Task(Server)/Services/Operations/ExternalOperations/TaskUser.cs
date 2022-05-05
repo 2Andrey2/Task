@@ -46,7 +46,15 @@ namespace Task_Server_.Services.Operations.ExternalOperations
         {
             try
             {
-                var user = db.tusers.Where(p => p.login == Encryption.EncodeDecryptString(massinfo[0]) && p.password == Encryption.EncodeDecryptString(massinfo[1]));
+                IQueryable<tusers> user = null;
+                if (massinfo.Count >= 2)
+                {
+                    user = db.tusers.Where(p => p.id == Convert.ToInt32(Encryption.EncodeDecryptString(massinfo[0])));
+                }
+                if (massinfo.Count >= 3)
+                {
+                    user = db.tusers.Where(p => p.login == Encryption.EncodeDecryptString(massinfo[0]) && p.password == Encryption.EncodeDecryptString(massinfo[1]));
+                }
                 foreach (tusers rez in user)
                 {
                     return rez;

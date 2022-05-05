@@ -26,8 +26,6 @@ namespace Task_Client_.Models.Actions
                 {
                     UserNow.key = (string)resultO;
                     info.Add(UserNow.key);
-                    GetUser(info);
-                    UserNow.Friends = GetFroendsUser(new List<string> { UserNow.Authorized.id.ToString() });
                 }
                 return (string)resultO;
             }

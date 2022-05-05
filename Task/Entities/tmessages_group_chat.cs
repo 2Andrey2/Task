@@ -6,7 +6,5 @@ namespace Task_Data_.Entities
     {
         public int id { get; set; }
         public string name { get; set; }
-        public List<tusers_group_chat> group_chat { get; set; } = new();
-        public List<tmessages> messages { get; set; } = new();
     }
 }

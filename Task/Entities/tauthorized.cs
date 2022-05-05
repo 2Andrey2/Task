@@ -12,5 +12,6 @@ namespace Task_Data_.Entities
         public int user { get; set; }
         public int keyuser { get; set; }
         public long date { get; set; }
+        public int user_port { get; set; }
     }
 }

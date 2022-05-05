@@ -6,6 +6,5 @@ namespace Task_Data_.Entities
     {
         public int id { get; set; }
         public string name { get; set; }
-        public List<tgroups> groups { get; set; } = new ();
     }
 }

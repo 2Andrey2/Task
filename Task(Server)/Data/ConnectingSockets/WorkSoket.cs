@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 
 namespace Task_Server_.Data.ConnectingSockets
@@ -41,14 +42,33 @@ namespace Task_Server_.Data.ConnectingSockets
             sListener.Close();
         }
 
-        protected byte[] GettingResult (int size = 0)
+        public  byte[] GettingResult (int size = 0)
         {
-            handler = sListener.Accept();
             byte[] bytes;
             if (size == 0)
             {
-                bytes = new byte[handler.Available];
-                handler.Receive(bytes);
+                bytes = new byte[0];
+                int flag = 0;
+                for (int i = 0; i < 10; i++)
+                {
+                    byte[] tempByte1 = bytes;
+                    byte[] tempByte2 = null;
+                    if (flag == 1 && handler.Available == 0)
+                    {
+                        break;
+                    }
+                    if (handler.Available != 0)
+                    {
+                        tempByte2 = new byte[handler.Available];
+                        handler.Receive(tempByte2);
+                        flag = 1;
+                    }
+                    if (tempByte2 != null)
+                    {
+                        bytes = tempByte1.Concat(tempByte2).ToArray();
+                    }
+                    System.Threading.Thread.Sleep(200);
+                }
             }
             else
             {

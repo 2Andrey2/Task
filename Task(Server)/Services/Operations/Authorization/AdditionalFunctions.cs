@@ -8,11 +8,7 @@ namespace Task_Server_.Services.Operations.Authorization
     class AdditionalFunctions : Operations
     {
         string[] withoutAuthorization = new string[] { "registration", "authorizationuser" };
-        protected int KeyGeneration()
-        {
-            Random random = new ();
-            return random.Next(1000, 100000);
-        }
+        
         public bool CheckingRights(string[] info, List<string> task)
         {
             try

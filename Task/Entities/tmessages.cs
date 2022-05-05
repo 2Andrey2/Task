@@ -8,6 +8,5 @@
         public string message { get; set; }
         public int? group_chat { get; set; }
         public int personal { get; set; }
-        public tmessages_group_chat messages_group_chat { get; set; }
     }
 }

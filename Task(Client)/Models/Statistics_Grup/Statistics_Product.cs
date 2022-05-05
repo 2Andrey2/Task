@@ -55,7 +55,7 @@ namespace Task_Client_.Models.Statistics_Grup
             if(_type == "Участники")
             {
                 var typeChek = DateTime.Now.AddMonths(-1);
-                var typeMass = System.DateTime.UtcNow.Subtract(typeChek);
+                var typeMass = DateTime.UtcNow.Subtract(typeChek);
                 for (int i = 0; i < typeMass.Days; i++)
                 {
                     masstype.Add(typeChek.Day.ToString() + "." + typeChek.Month.ToString() + "." + typeChek.Year.ToString());
@@ -67,7 +67,7 @@ namespace Task_Client_.Models.Statistics_Grup
                     DateTime pDate = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).AddSeconds(type.date);
                     DateTime NewDate = (new DateTime(1970, 1, 1, 0, 0, 0, 0)).AddSeconds(DateTimeOffset.UtcNow.ToUnixTimeSeconds());
                     var result = NewDate.Subtract(pDate);
-                    if (System.DateTime.DaysInMonth(DateTimeOffset.UtcNow.Year, DateTimeOffset.UtcNow.Month) > result.Days)
+                    if (DateTime.DaysInMonth(DateTimeOffset.UtcNow.Year, DateTimeOffset.UtcNow.Month) > result.Days)
                     {
                         masscount[pDate.Day]++;
                     }

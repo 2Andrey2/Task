@@ -55,7 +55,7 @@ namespace Task_Client_.Models.Actions
                 infoData = new List<string> { task, massdata.Length.ToString(), dataType};
             }
             List<string> resultS = (List<string>)connect.DataPreparation(SerializationString(infoData), new List<string> { "List<string>" });
-            if (resultS[0] != "Not")
+            if (resultS != null && resultS[0] != "Not")
             {
                 return connect.DataPreparation(massdata, resultS);
             }

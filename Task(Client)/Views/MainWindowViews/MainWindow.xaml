@@ -19,9 +19,20 @@
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+        <ListView Visibility="{Binding vis_event}" Margin="505,60,10,194" ItemsSource="{Binding events}" SelectedItem="{Binding eventt}" Grid.Column="1" Grid.RowSpan="5" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название" Width="auto" DisplayMemberBinding="{Binding name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <materialDesign:ColorZone Mode="PrimaryMid" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
             <Grid>
+                <Button
+                Style="{DynamicResource MaterialDesignFloatingActionMiniButton}"
+                materialDesign:ShadowAssist.ShadowDepth="Depth4" Command="{Binding Notifications}"
+                Content="{Binding numberNotifications, Mode=TwoWay}" Margin="1025,10,49,10" Height="26" Width="26" Background="#FF6DCF7A" Cursor="Hand" />
+                <materialDesign:PackIcon Kind="Bell" Margin="994,0,0,0" Height="26" Width="26" VerticalAlignment="Center"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" HorizontalAlignment="Right" Margin="10"/>
             </Grid>
         </materialDesign:ColorZone>
@@ -37,6 +48,6 @@
                 <StackPanel x:Name="Menu" Margin="10"/>
             </ScrollViewer>
         </Grid>
-        <StackPanel x:Name="StackPanelMain" Grid.Row="1" Margin="248,10,0,0" Width="auto" Grid.ColumnSpan="2" Height="auto"/>
+        <StackPanel x:Name="StackPanelMain" Grid.Row="1" Margin="5,10,0,0" Width="auto" Height="auto" Grid.Column="1"/>
     </Grid>
 </Window>

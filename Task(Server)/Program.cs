@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
 using System.Threading.Tasks;
+using Task_Data_.SystemData;
 using Task_Server_.Data.ConnectingSockets;
 using Task_Server_.Services;
 using Task_Server_.Services.Operations.SystemOperations;
@@ -17,12 +15,12 @@ namespace Task_Server_
             Task packetprocessing = new(PacketProcessing);
             packetprocessing.Start();
             TaskTokens tokens = new();
+            TaskEvent eventt = new TaskEvent();
             while (true)
             {
                 tokens.TokenVerification();
-                //WorkSoket soket = new();
-                //soket.CreateSoketSend(10000);
-                System.Threading.Thread.Sleep(2000);
+                eventt.CheckEvents();
+                System.Threading.Thread.Sleep(10000);
             }
         }
 
@@ -42,6 +40,12 @@ namespace Task_Server_
                     informationpackage.Start();
                     datapackage.Start();
                 }
+                if (informationpackage.Status == TaskStatus.Faulted)
+                {
+                    Console.WriteLine("Ошибка в информационном потоке. Перезапуск");
+                    informationpackage = new Task<List<string>>(InformationPackage, workSocket);
+                    informationpackage.Start();
+                }
             }
         }
 
@@ -51,7 +55,9 @@ namespace Task_Server_
             List<string> rezservis = (List<string>)workSocket.WaitingСonnection(0, "List<string>");
             Console.WriteLine("Получен информационный пакет");
             List<string> answer = AnalysisTask.Analysis(rezservis);
-            answer.Add("11001");
+            string port = Ports.GetPort().ToString();
+            answer.Add(port);
+            rezservis.Add(port);
             Console.WriteLine("Отправлен информационный пакет " + rezservis[0] + " : " + rezservis[1]);
             workSocket.AnswerObject(answer);
             return rezservis;
@@ -60,7 +66,7 @@ namespace Task_Server_
         private static List<string> DataPackage(object rezservisOBJ)
         {
             List<string> rezservis = (List<string>)rezservisOBJ;
-            WorkSocketData workSocket = new(11001);
+            WorkSocketData workSocket = new(Convert.ToInt32(rezservis[rezservis.Count - 1]));
             object rez = workSocket.WaitingСonnection(Convert.ToInt32(rezservis[1]), rezservis[2]);
             Console.WriteLine("Получен пакет данных");
             workSocket.AnswerObject(AnalysisTask.CompletingTask(rezservis[0], rez));

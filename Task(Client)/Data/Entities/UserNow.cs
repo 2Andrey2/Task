@@ -12,5 +12,6 @@ namespace Task_Client_.Data.Entities
         static public int groups;
         static public List<members_group> userMass;
         static public int status_groups;
+        static public int listen_port;
     }
 }

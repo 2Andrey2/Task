@@ -53,9 +53,12 @@ namespace Task_Client_.ViewModels.ModelWindows.MainWindow.Groups
                 {
                     tgroups[] tgroups = actionsGroups.SearchGroup(new List<string> { _groupName });
                     _foundGroups.Clear();
-                    for (int i = 0; i < tgroups.Length; i++)
+                    if (tgroups != null)
                     {
-                        _foundGroups.Add(new tgroups(tgroups[i].name, tgroups[i].id));
+                        for (int i = 0; i < tgroups.Length; i++)
+                        {
+                            _foundGroups.Add(new tgroups(tgroups[i].name, tgroups[i].id));
+                        }
                     }
                 });
             }

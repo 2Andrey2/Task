@@ -7,9 +7,9 @@ using Task_Server_.Data.WorkingDatabase;
 
 namespace Task_Server_.Services.Operations
 {
-    class Operations
+    public class Operations
     {
-        protected DBMySQLUtils db;
+        public DBMySQLUtils db;
 
         public Operations()
         {

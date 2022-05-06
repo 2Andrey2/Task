@@ -4,7 +4,7 @@ using Task_Data_.Entities;
 
 namespace Task_Server_.Data.WorkingDatabase
 {
-    class DBMySQLUtils : DbContext
+    public class DBMySQLUtils : DbContext
     {
         public DbSet<tusers> tusers { get; set; }
         public DbSet<tfriends> tfriends { get; set; }

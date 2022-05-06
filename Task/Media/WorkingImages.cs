@@ -20,8 +20,8 @@ namespace Task_Data_.Media
         }
         public static Image ImageDecoding (byte[] data)
         {
-            MemoryStream ms = new MemoryStream(data);
-            return Image.FromStream(ms);
+            Image x = (Bitmap)(new ImageConverter()).ConvertFrom(data);
+            return x;
         }
     }
 }

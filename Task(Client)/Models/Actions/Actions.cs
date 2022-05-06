@@ -10,12 +10,20 @@ using Task_Data_.Media;
 
 namespace Task_Client_.Models.Actions
 {
-    class Actions
+    public class Actions
     {
-        protected WorkSoket connect;
+        WorkSoket connect;
         public Actions()
         {
             connect = new WorkSoket();
+        }
+        public byte[] TestSerializationString(object data)
+        {
+            return SerializationString(data);
+        }
+        public object TestSendingRequest(object data, string task, string dataType)
+        {
+            return SendingRequest(data, task, dataType);
         }
         protected byte[] SerializationString(object data)
         {

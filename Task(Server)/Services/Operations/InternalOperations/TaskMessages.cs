@@ -7,7 +7,7 @@ using Task_Data_.Entities;
 
 namespace Task_Server_.Services.Operations.InternalOperations
 {
-    class TaskMessages: Operations, IOperations
+    public class TaskMessages: Operations, IOperations
     {
         public object running(string task, object massinfo, List<string> parameters = null)
         {

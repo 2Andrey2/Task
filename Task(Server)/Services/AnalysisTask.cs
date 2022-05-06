@@ -5,7 +5,7 @@ using Task_Server_.Services.Operations.Authorization;
 
 namespace Task_Server_.Services
 {
-    static class AnalysisTask
+    public static class AnalysisTask
     {
         public static List<string> Analysis(List<string> task)
         {

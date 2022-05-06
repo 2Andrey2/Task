@@ -72,7 +72,7 @@ namespace Task_Client_.Views.MainWindowViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Task(Client);component/views/mainwindowviews/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Task(Client);V1.0.0.0;component/views/mainwindowviews/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\MainWindowViews\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

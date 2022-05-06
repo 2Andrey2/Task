@@ -6,7 +6,7 @@ using Task_Data_.Entities;
 
 namespace Task_Server_.Services.Operations.ExternalOperations
 {
-    class TaskGroups : Operations, IOperations
+    public class TaskGroups : Operations, IOperations
     {
         public object running(string task, object massinfo, List<string> parameters = null)
         {

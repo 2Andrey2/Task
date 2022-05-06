@@ -20,7 +20,7 @@ namespace Task_Data_.SystemData
                     tcpListener.Stop();
                     return port;
                 }
-                catch (SocketException ex)
+                catch
                 {
                     if (port <= portMax)
                     {

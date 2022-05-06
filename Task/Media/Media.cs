@@ -7,13 +7,16 @@ namespace Task_Data_.Media
         public static string PathFolderUser = "users";
         public static string NameAvatar = "avatar.png";
 
-        public static bool CheckingUsersFolder (string id)
+        public static bool CheckingUsersFolder (string id, bool create = true)
         {
             try
             {
                 if (!Directory.Exists(PathFolderUser + "/" + id))
                 {
-                    Directory.CreateDirectory(PathFolderUser + "/" + id);
+                    if (create)
+                    {
+                        Directory.CreateDirectory(PathFolderUser + "/" + id);
+                    }
                 }
                 return true;
             }

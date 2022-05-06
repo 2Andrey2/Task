@@ -7,7 +7,7 @@ using Task_Server_.Services.Operations.SystemOperations;
 
 namespace Task_Server_.Services.Operations.Authorization
 {
-    class Authorization: AdditionalFunctions, IOperations
+    public class Authorization: AdditionalFunctions, IOperations
     {
         public object running(string task, object massinfo, List<string> parameters = null)
         {
@@ -27,7 +27,7 @@ namespace Task_Server_.Services.Operations.Authorization
             }
             return "Not";
         }
-        public string AuthorizationUser(List<string> info)
+        private string AuthorizationUser(List<string> info)
         {
             try
             {

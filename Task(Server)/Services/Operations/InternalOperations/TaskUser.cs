@@ -9,7 +9,7 @@ using Task_Data_.Media;
 
 namespace Task_Server_.Services.Operations.InternalOperations
 {
-    class TaskUser: Operations, IOperations
+    public class TaskUser: Operations, IOperations
     {
         public object running(string task, object massinfo, List<string> parameters = null)
         {

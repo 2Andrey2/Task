@@ -6,7 +6,7 @@ using Task_Server_.Data.ConnectingSockets;
 
 namespace Task_Server_.Services.Operations.SystemOperations
 {
-    class TaskTokens : Operations
+    public class TaskTokens : Operations
     {
         public void TokenVerification ()
         {

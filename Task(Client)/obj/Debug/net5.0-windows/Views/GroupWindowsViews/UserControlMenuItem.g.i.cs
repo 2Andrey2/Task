@@ -80,7 +80,8 @@ namespace Task_Client_.Views.GroupWindowsViews {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Task(Client);component/views/groupwindowsviews/usercontrolmenuitem.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Task(Client);V1.0.0.0;component/views/groupwindowsviews/usercontrolmenuitem.xaml" +
+                    "", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\GroupWindowsViews\UserControlMenuItem.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

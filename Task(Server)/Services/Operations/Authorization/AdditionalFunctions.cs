@@ -5,7 +5,7 @@ using Task_Data_.Entities;
 
 namespace Task_Server_.Services.Operations.Authorization
 {
-    class AdditionalFunctions : Operations
+    public class AdditionalFunctions : Operations
     {
         string[] withoutAuthorization = new string[] { "registration", "authorizationuser" };
         

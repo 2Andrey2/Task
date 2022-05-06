@@ -9,3 +9,4 @@ C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Da
 C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).dll
 C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\ref\Task(Data).dll
 C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).pdb
+C:\Users\Andrey\source\repos\Task(Coursework)Git\Task\obj\Release\net5.0\Task(Data).csprojAssemblyReference.cache

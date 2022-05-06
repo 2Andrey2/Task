@@ -5,7 +5,7 @@ using Task_Data_.Entities;
 
 namespace Task_Server_.Services.Operations.InternalOperations
 {
-    class TaskChat : Operations, IOperations
+    public class TaskChat : Operations, IOperations
     {
         public object running(string task, object massinfo, List<string> parameters = null)
         {
